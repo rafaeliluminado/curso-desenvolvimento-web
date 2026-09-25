@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Estilização do Card aplicando o Box Model do material */
+.card {
+    width: 100%;
+    max-width: 380px;
+    
+    /* Preenchimento interno (Padding) */
+    padding: 24px;
+    
+    /* Borda (Border) */
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    
+    /* Margem externa centralizada (Margin auto) */
+    margin: 20px auto;
+    
+    /* Cores e sombreamento */
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.card h1 {
+    font-size: 1.25rem;
+    color: #1e293b;
+    margin-bottom: 12px;
+}
+
+.card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #475569;
+    margin-bottom: 12px;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 09 - Box Model e Tipos de Estilos</title>
+    
+    <!-- 1. ESTILO EXTERNO -->
+    <link rel="stylesheet" href="estilo.css">
+
+    <!-- 2. ESTILO INTERNO (Tags de estilo no cabeçalho) -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Card Prático do Box Model -->
+        <div class="card">
+            <h1>Entendendo o Box Model</h1>
+            <p>Este card aplica largura definida, preenchimento interno (padding), borda sólida e margem externa centralizada.</p>
+            
+            <!-- 3. ESTILO INLINE (Atributo style direto na tag) -->
+            <p style="color: #2563eb; font-weight: bold; font-size: 0.9rem;">
+                Exemplo de estilo inline aplicado diretamente neste parágrafo.
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
