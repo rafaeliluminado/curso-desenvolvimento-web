@@ -1,0 +1,45 @@
+header {
+    background-color:aqua;
+    padding: 5px;
+    color: white;
+}
+header nav {
+    background-color:aliceblue;
+}
+header nav ul {
+    list-style: none;
+    position: relative;
+    height: 30px;
+    display: flex;
+}
+header nav ul li a {
+    position: absolute;
+    display: block;
+    margin: 10px;
+}
+
+main {
+    background-color: whitesmoke;
+    padding: 5px;
+
+}
+main table {
+    width: 400px;
+    border: 1px solid black;
+}
+
+main table td, main table th {
+    border: 1px solid black;
+}
+
+main table td img:hover {
+    border: 150px;
+}
+
+footer {
+    background-color:rgb(78, 78, 78);
+    color: aliceblue;
+    padding: 5px;
+    text-align: center;
+
+}
