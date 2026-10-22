@@ -1,0 +1,87 @@
+<!--
+  Nome: Rafael Henrique de Oliveira Souza
+  Atividade: Aula 16 - Integração de Componentes de Interface
+  Data: 2026
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 16 - Painel Administrativo</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <header>
+        <h1>Painel Administrativo - Gestão de Usuários</h1>
+    </header>
+
+    <main class="container">
+        <!-- Tabela de Dados -->
+        <section class="tabela-section">
+            <h3>Usuários Cadastrados (Clique em uma linha)</h3>
+            <table id="tabelaUsuarios">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                        <th>Cargo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr onclick="carregarNoFormulario(1, 'Rafael Souza', 'rafael@email.com', 'Desenvolvedor')">
+                        <td>1</td>
+                        <td>Rafael Souza</td>
+                        <td>rafael@email.com</td>
+                        <td>Desenvolvedor</td>
+                    </tr>
+                    <tr onclick="carregarNoFormulario(2, 'Ana Silva', 'ana@email.com', 'Designer')">
+                        <td>2</td>
+                        <td>Ana Silva</td>
+                        <td>ana@email.com</td>
+                        <td>Designer</td>
+                    </tr>
+                    <tr onclick="carregarNoFormulario(3, 'Carlos Lima', 'carlos@email.com', 'Gerente')">
+                        <td>3</td>
+                        <td>Carlos Lima</td>
+                        <td>carlos@email.com</td>
+                        <td>Gerente</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Formulário de Edição -->
+        <section class="form-section">
+            <h3>Dados do Usuário</h3>
+            <form id="formUsuario">
+                <div class="input-group">
+                    <label for="id">ID:</label>
+                    <input type="text" id="id" readonly placeholder="Selecione um usuário">
+                </div>
+
+                <div class="input-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" required placeholder="Nome do usuário">
+                </div>
+
+                <div class="input-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" required placeholder="E-mail do usuário">
+                </div>
+
+                <div class="input-group">
+                    <label for="cargo">Cargo:</label>
+                    <input type="text" id="cargo" required placeholder="Cargo do usuário">
+                </div>
+
+                <button type="button" class="btn-salvar" onclick="salvarAlteracao()">Salvar Alterações</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
