@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.form-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+}
+
+.form-container h2 {
+    text-align: center;
+    color: #1b365d;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 6px;
+    color: #333;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.95em;
+    transition: all 0.3s ease;
+}
+
+/* Pseudo-classes CSS específicas para formulários */
+input:focus {
+    border-color: #1b365d;
+    outline: none;
+    box-shadow: 0 0 5px rgba(27, 54, 93, 0.3);
+}
+
+input:disabled {
+    background-color: #e9ecef;
+    color: #6c757d;
+    cursor: not-allowed;
+    border-color: #dee2e6;
+}
+
+input:required {
+    border-left: 4px solid #dc3545;
+}
+
+input:read-only {
+    background-color: #f8f9fa;
+    color: #495057;
+}
+
+button {
+    margin-top: 8px;
+    padding: 8px 12px;
+    background-color: #1b365d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85em;
+}
+
+button:hover {
+    background-color: #14284b;
+}

@@ -1,0 +1,45 @@
+<!--
+  Nome: Rafael Henrique de Oliveira Souza
+  Atividade: Aula 14 - CSS para Formulários
+  Data: 2026
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 14 - CSS para Formulários</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Formulário Dinâmico</h2>
+
+        <form id="meuFormulario">
+            <div class="input-group">
+                <label for="campo01">Campo 01 (Autofocus):</label>
+                <input type="text" id="campo01" name="campo01" value="Valor Padrão" autofocus>
+            </div>
+
+            <div class="input-group">
+                <label for="campo02">Campo 02 (Interativo):</label>
+                <input type="text" id="campo02" name="campo02" placeholder="Desabilitado por padrão" disabled>
+                <button type="button" id="btnHabilitar" onclick="habilitarCampo()">Habilitar Campo 02</button>
+            </div>
+
+            <div class="input-group">
+                <label for="campo03">Campo 03 (Obrigatório):</label>
+                <input type="text" id="campo03" name="campo03" placeholder="Campo obrigatório" required>
+            </div>
+
+            <div class="input-group">
+                <label for="campo04">Campo 04 (Apenas Leitura):</label>
+                <input type="text" id="campo04" name="campo04" value="Somente leitura" readonly>
+            </div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
