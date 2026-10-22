@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.perfil-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+.perfil-container h2 {
+    text-align: center;
+    color: #1b365d;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 6px;
+    color: #333;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.input-group input[type="text"],
+.input-group input[type="email"],
+.input-group select,
+.input-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.95em;
+}
+
+.input-group textarea {
+    resize: vertical;
+}
+
+.options-inline {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.options-inline label {
+    font-weight: normal;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+.btn-salvar {
+    width: 100%;
+    padding: 12px;
+    background-color: #1b365d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.btn-salvar:hover {
+    background-color: #14284b;
+}
+
+.mensagem {
+    font-size: 0.9em;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.sucesso {
+    color: green;
+}
+
+.erro {
+    color: red;
+}

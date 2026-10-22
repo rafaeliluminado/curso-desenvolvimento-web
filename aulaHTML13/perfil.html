@@ -1,0 +1,78 @@
+<!--
+  Nome: Rafael Henrique de Oliveira Souza
+  Atividade: Aula 13 - Elementos Avançados de Formulário
+  Data: 2026
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Usuário - Aula 13</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <div class="perfil-container">
+        <h2>Perfil do Usuário</h2>
+
+        <form id="formPerfil" onsubmit="return validarPerfil(event)">
+            
+            <!-- Campo de Texto Simples -->
+            <div class="input-group">
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" placeholder="Seu nome completo" required>
+            </div>
+
+            <div class="input-group">
+                <label for="email">E-mail de Contato:</label>
+                <input type="email" id="email" placeholder="seuemail@exemplo.com" required>
+            </div>
+
+            <!-- Select (Dropdown) -->
+            <div class="input-group">
+                <label for="nivel">Nível de Experiência:</label>
+                <select id="nivel" required>
+                    <option value="">Selecione...</option>
+                    <option value="iniciante">Iniciante</option>
+                    <option value="intermediario">Intermediário</option>
+                    <option value="avancado">Avançado</option>
+                </select>
+            </div>
+
+            <!-- Radio Buttons (Múltipla escolha - opção única) -->
+            <div class="input-group">
+                <label>Gênero:</label>
+                <div class="options-inline">
+                    <label><input type="radio" name="genero" value="masculino" required> Masculino</label>
+                    <label><input type="radio" name="genero" value="feminino"> Feminino</label>
+                    <label><input type="radio" name="genero" value="outro"> Outro</label>
+                </div>
+            </div>
+
+            <!-- Checkboxes (Seleção múltipla) -->
+            <div class="input-group">
+                <label>Áreas de Interesse:</label>
+                <div class="options-inline">
+                    <label><input type="checkbox" name="interesses" value="html"> HTML/CSS</label>
+                    <label><input type="checkbox" name="interesses" value="js"> JavaScript</label>
+                    <label><input type="checkbox" name="interesses" value="backend"> Back-End</label>
+                </div>
+            </div>
+
+            <!-- Textarea (Texto Extenso) -->
+            <div class="input-group">
+                <label for="biografia">Biografia / Resumo Profissional:</label>
+                <textarea id="biografia" rows="4" placeholder="Conte um pouco sobre você..." required></textarea>
+            </div>
+
+            <p id="mensagem" class="mensagem"></p>
+
+            <button type="submit" class="btn-salvar">Salvar Alterações</button>
+
+        </form>
+    </div>
+
+    <script src="perfil.js"></script>
+</body>
+</html>
