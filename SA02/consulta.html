@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Consulte, cadastre e edite usuários no NovaWeb.">
+    <title>Usuários | NovaWeb</title>
+    <link rel="icon" href="assets/images/marca-novaweb.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/estilo.css">
+    <script src="js/dados.js" defer></script>
+    <script src="js/script.js" defer></script>
+</head>
+<body class="pagina-sistema" data-page="consulta">
+    <div class="estrutura-sistema">
+        <aside class="barra-lateral">
+            <a class="marca marca-clara" href="painel.html" aria-label="NovaWeb - painel">
+                <img src="assets/images/marca-novaweb.svg" alt="" width="38" height="38">
+                <span>novaweb</span>
+            </a>
+            <p class="rotulo-menu">MENU PRINCIPAL</p>
+            <nav class="navegacao-lateral" aria-label="Navegação principal">
+                <a class="item-navegacao" href="painel.html"><span class="icone-navegacao" aria-hidden="true">01</span><span>Visão geral</span></a>
+                <a class="item-navegacao ativo" href="consulta.html" aria-current="page"><span class="icone-navegacao" aria-hidden="true">02</span><span>Usuários</span></a>
+                <a class="item-navegacao" href="perfil.html"><span class="icone-navegacao" aria-hidden="true">03</span><span>Meu perfil</span></a>
+            </nav>
+            <div class="lateral-inferior">
+                <span class="ponto-status" aria-hidden="true"></span>
+                <div><strong>Ambiente local</strong><small>Dados salvos no navegador</small></div>
+            </div>
+        </aside>
+
+        <div class="conteudo-sistema">
+            <header class="barra-superior">
+                <div class="caminho-pagina"><span>NovaWeb</span><span aria-hidden="true">/</span><strong>Usuários</strong></div>
+                <div class="usuario-superior">
+                    <span class="avatar-usuario" aria-hidden="true">NW</span>
+                    <div class="dados-usuario-superior"><strong id="nome-superior">Administrador</strong><small id="email-superior">Conta demonstrativa</small></div>
+                    <a class="sair-link" href="login.html" id="link-sair">Sair</a>
+                </div>
+            </header>
+
+            <main class="conteudo-principal">
+                <div class="cabecalho-pagina">
+                    <div>
+                        <p class="sobretitulo">ADMINISTRAÇÃO</p>
+                        <h1>Usuários</h1>
+                        <p class="descricao-pagina">Pesquise os registros e mantenha os dados da equipe atualizados.</p>
+                    </div>
+                    <button type="button" class="botao botao-principal" id="novo-usuario">+ Novo usuário</button>
+                </div>
+
+                <div class="layout-consulta">
+                    <section class="painel-conteudo painel-listagem" aria-labelledby="titulo-listagem">
+                        <div class="cabecalho-painel cabecalho-listagem">
+                            <div>
+                                <h2 id="titulo-listagem">Lista de usuários</h2>
+                                <p id="contador-usuarios">Carregando registros...</p>
+                            </div>
+                            <button type="button" class="botao botao-secundario botao-exportar" id="exportar-csv">Exportar CSV</button>
+                        </div>
+
+                        <div class="filtros-tabela">
+                            <div class="campo campo-busca">
+                                <label for="pesquisa-usuario">Pesquisar</label>
+                                <input type="search" id="pesquisa-usuario" placeholder="Nome, e-mail ou cargo" autocomplete="off">
+                            </div>
+                            <div class="campo campo-filtro">
+                                <label for="filtro-status">Status</label>
+                                <select id="filtro-status">
+                                    <option value="todos">Todos</option>
+                                    <option value="Ativo">Ativos</option>
+                                    <option value="Pendente">Pendentes</option>
+                                    <option value="Inativo">Inativos</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="tabela-responsiva">
+                            <table class="tabela-dados tabela-usuarios">
+                                <caption>Usuários cadastrados no sistema NovaWeb</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Nome</th>
+                                        <th scope="col">E-mail</th>
+                                        <th scope="col">Cargo</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Ação</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="linhas-usuarios"></tbody>
+                            </table>
+                            <div class="estado-vazio" id="estado-vazio" hidden>
+                                <strong>Nenhum usuário encontrado</strong>
+                                <p>Altere a pesquisa ou o filtro para ver outros registros.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <aside class="painel-conteudo painel-edicao" aria-labelledby="titulo-form-usuario">
+                        <div class="cabecalho-painel">
+                            <div>
+                                <h2 id="titulo-form-usuario">Novo usuário</h2>
+                                <p id="descricao-form-usuario">Preencha os dados para adicionar um registro.</p>
+                            </div>
+                        </div>
+
+                        <form id="form-usuario" class="formulario-padrao">
+                            <div class="campo">
+                                <label for="usuario-id">Identificador</label>
+                                <input type="text" id="usuario-id" value="Gerado ao salvar" readonly>
+                            </div>
+                            <div class="campo">
+                                <label for="usuario-nome">Nome completo</label>
+                                <input type="text" id="usuario-nome" name="nome" placeholder="Nome do usuário" minlength="3" required>
+                            </div>
+                            <div class="campo">
+                                <label for="usuario-email">E-mail</label>
+                                <input type="email" id="usuario-email" name="email" placeholder="usuario@empresa.com" required>
+                            </div>
+                            <div class="campo">
+                                <label for="usuario-telefone">Telefone</label>
+                                <input type="tel" id="usuario-telefone" name="telefone" placeholder="(11) 99999-9999" maxlength="15">
+                            </div>
+                            <div class="campo">
+                                <label for="usuario-cargo">Cargo</label>
+                                <select id="usuario-cargo" name="cargo" required>
+                                    <option value="">Selecione um cargo</option>
+                                    <option value="Administrador">Administrador</option>
+                                    <option value="Desenvolvedor">Desenvolvedor</option>
+                                    <option value="Designer">Designer</option>
+                                    <option value="Analista">Analista</option>
+                                    <option value="Atendimento">Atendimento</option>
+                                    <option value="Gerente">Gerente</option>
+                                </select>
+                            </div>
+                            <div class="campo">
+                                <label for="usuario-status">Status</label>
+                                <select id="usuario-status" name="status" required>
+                                    <option value="Ativo">Ativo</option>
+                                    <option value="Pendente">Pendente</option>
+                                    <option value="Inativo">Inativo</option>
+                                </select>
+                            </div>
+
+                            <p class="mensagem-formulario" id="mensagem-usuario" role="status" aria-live="polite"></p>
+                            <div class="acoes-formulario acoes-empilhadas">
+                                <button type="submit" class="botao botao-principal botao-largo" id="salvar-usuario">Salvar usuário</button>
+                                <div class="acoes-secundarias">
+                                    <button type="button" class="botao botao-secundario" id="limpar-formulario">Limpar</button>
+                                    <button type="button" class="botao botao-perigo" id="excluir-usuario" disabled>Excluir</button>
+                                </div>
+                            </div>
+                        </form>
+                    </aside>
+                </div>
+
+                <footer class="rodape-sistema"><span>NovaWeb · Situação de Aprendizagem 02</span><span>Projeto acadêmico · Dados fictícios</span></footer>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

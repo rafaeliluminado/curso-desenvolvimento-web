@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Visão geral do sistema administrativo NovaWeb.">
+    <title>Visão geral | NovaWeb</title>
+    <link rel="icon" href="assets/images/marca-novaweb.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/estilo.css">
+    <script src="js/dados.js" defer></script>
+    <script src="js/script.js" defer></script>
+</head>
+<body class="pagina-sistema" data-page="painel">
+    <div class="estrutura-sistema">
+        <aside class="barra-lateral">
+            <a class="marca marca-clara" href="painel.html" aria-label="NovaWeb - painel">
+                <img src="assets/images/marca-novaweb.svg" alt="" width="38" height="38">
+                <span>novaweb</span>
+            </a>
+
+            <p class="rotulo-menu">MENU PRINCIPAL</p>
+            <nav class="navegacao-lateral" aria-label="Navegação principal">
+                <a class="item-navegacao ativo" href="painel.html" aria-current="page">
+                    <span class="icone-navegacao" aria-hidden="true">01</span>
+                    <span>Visão geral</span>
+                </a>
+                <a class="item-navegacao" href="consulta.html">
+                    <span class="icone-navegacao" aria-hidden="true">02</span>
+                    <span>Usuários</span>
+                </a>
+                <a class="item-navegacao" href="perfil.html">
+                    <span class="icone-navegacao" aria-hidden="true">03</span>
+                    <span>Meu perfil</span>
+                </a>
+            </nav>
+
+            <div class="lateral-inferior">
+                <span class="ponto-status" aria-hidden="true"></span>
+                <div>
+                    <strong>Ambiente local</strong>
+                    <small>Dados salvos no navegador</small>
+                </div>
+            </div>
+        </aside>
+
+        <div class="conteudo-sistema">
+            <header class="barra-superior">
+                <div class="caminho-pagina"><span>NovaWeb</span><span aria-hidden="true">/</span><strong>Visão geral</strong></div>
+                <div class="usuario-superior">
+                    <span class="avatar-usuario" aria-hidden="true">NW</span>
+                    <div class="dados-usuario-superior">
+                        <strong id="nome-superior">Administrador</strong>
+                        <small id="email-superior">Conta demonstrativa</small>
+                    </div>
+                    <a class="sair-link" href="login.html" id="link-sair">Sair</a>
+                </div>
+            </header>
+
+            <main class="conteudo-principal">
+                <div class="cabecalho-pagina">
+                    <div>
+                        <p class="sobretitulo">RESUMO DO SISTEMA</p>
+                        <h1>Visão geral</h1>
+                        <p class="descricao-pagina" id="mensagem-boas-vindas">Acompanhe os cadastros e a situação dos usuários.</p>
+                    </div>
+                    <a class="botao botao-principal" href="consulta.html?novo=1">+ Novo usuário</a>
+                </div>
+
+                <section class="indicadores" aria-label="Indicadores de usuários">
+                    <article class="cartao-indicador">
+                        <span class="indicador-legenda">Usuários cadastrados</span>
+                        <strong class="indicador-valor" id="total-usuarios">0</strong>
+                        <span class="indicador-nota">Registros disponíveis no sistema</span>
+                    </article>
+                    <article class="cartao-indicador">
+                        <span class="indicador-legenda">Acessos ativos</span>
+                        <strong class="indicador-valor" id="total-ativos">0</strong>
+                        <span class="indicador-nota">Contas com status ativo</span>
+                    </article>
+                    <article class="cartao-indicador">
+                        <span class="indicador-legenda">Aguardando revisão</span>
+                        <strong class="indicador-valor" id="total-pendentes">0</strong>
+                        <span class="indicador-nota">Contas pendentes ou inativas</span>
+                    </article>
+                    <article class="cartao-indicador">
+                        <span class="indicador-legenda">Cargos cadastrados</span>
+                        <strong class="indicador-valor" id="total-cargos">0</strong>
+                        <span class="indicador-nota">Funções diferentes na equipe</span>
+                    </article>
+                </section>
+
+                <div class="grade-painel">
+                    <section class="painel-conteudo painel-tabela" aria-labelledby="titulo-recentes">
+                        <div class="cabecalho-painel">
+                            <div>
+                                <h2 id="titulo-recentes">Usuários recentes</h2>
+                                <p>Uma visão rápida dos últimos registros.</p>
+                            </div>
+                            <a class="link-discreto" href="consulta.html">Ver todos</a>
+                        </div>
+                        <div class="tabela-responsiva">
+                            <table class="tabela-dados">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Usuário</th>
+                                        <th scope="col">Cargo</th>
+                                        <th scope="col">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="usuarios-recentes">
+                                    <tr><td colspan="3">Carregando usuários...</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <aside class="painel-conteudo painel-atalhos" aria-labelledby="titulo-atalhos">
+                        <div class="cabecalho-painel">
+                            <div>
+                                <h2 id="titulo-atalhos">Acesso rápido</h2>
+                                <p>Atalhos para tarefas comuns.</p>
+                            </div>
+                        </div>
+                        <a class="atalho-item" href="consulta.html?novo=1">
+                            <span class="atalho-numero">01</span>
+                            <span><strong>Cadastrar usuário</strong><small>Adicionar um novo registro</small></span>
+                            <span class="seta-atalho" aria-hidden="true">→</span>
+                        </a>
+                        <a class="atalho-item" href="consulta.html">
+                            <span class="atalho-numero">02</span>
+                            <span><strong>Consultar equipe</strong><small>Pesquisar e editar cadastros</small></span>
+                            <span class="seta-atalho" aria-hidden="true">→</span>
+                        </a>
+                        <a class="atalho-item" href="perfil.html">
+                            <span class="atalho-numero">03</span>
+                            <span><strong>Editar meu perfil</strong><small>Atualizar informações pessoais</small></span>
+                            <span class="seta-atalho" aria-hidden="true">→</span>
+                        </a>
+                    </aside>
+                </div>
+
+                <footer class="rodape-sistema">
+                    <span>NovaWeb · Situação de Aprendizagem 02</span>
+                    <span>Projeto acadêmico · Dados fictícios</span>
+                </footer>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

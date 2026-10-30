@@ -1,0 +1,13 @@
+# Arquivos temporários do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Configurações locais do editor
+.vscode/
+
+# Python/Flask (caso o back-end seja adicionado futuramente)
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env

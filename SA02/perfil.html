@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Visualize e atualize seu perfil no NovaWeb.">
+    <title>Meu perfil | NovaWeb</title>
+    <link rel="icon" href="assets/images/marca-novaweb.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/estilo.css">
+    <script src="js/dados.js" defer></script>
+    <script src="js/script.js" defer></script>
+</head>
+<body class="pagina-sistema" data-page="perfil">
+    <div class="estrutura-sistema">
+        <aside class="barra-lateral">
+            <a class="marca marca-clara" href="painel.html" aria-label="NovaWeb - painel">
+                <img src="assets/images/marca-novaweb.svg" alt="" width="38" height="38">
+                <span>novaweb</span>
+            </a>
+            <p class="rotulo-menu">MENU PRINCIPAL</p>
+            <nav class="navegacao-lateral" aria-label="Navegação principal">
+                <a class="item-navegacao" href="painel.html"><span class="icone-navegacao" aria-hidden="true">01</span><span>Visão geral</span></a>
+                <a class="item-navegacao" href="consulta.html"><span class="icone-navegacao" aria-hidden="true">02</span><span>Usuários</span></a>
+                <a class="item-navegacao ativo" href="perfil.html" aria-current="page"><span class="icone-navegacao" aria-hidden="true">03</span><span>Meu perfil</span></a>
+            </nav>
+            <div class="lateral-inferior">
+                <span class="ponto-status" aria-hidden="true"></span>
+                <div><strong>Ambiente local</strong><small>Dados salvos no navegador</small></div>
+            </div>
+        </aside>
+
+        <div class="conteudo-sistema">
+            <header class="barra-superior">
+                <div class="caminho-pagina"><span>NovaWeb</span><span aria-hidden="true">/</span><strong>Meu perfil</strong></div>
+                <div class="usuario-superior">
+                    <span class="avatar-usuario" aria-hidden="true">NW</span>
+                    <div class="dados-usuario-superior"><strong id="nome-superior">Administrador</strong><small id="email-superior">Conta demonstrativa</small></div>
+                    <a class="sair-link" href="login.html" id="link-sair">Sair</a>
+                </div>
+            </header>
+
+            <main class="conteudo-principal">
+                <div class="cabecalho-pagina">
+                    <div>
+                        <p class="sobretitulo">DADOS DA CONTA</p>
+                        <h1>Meu perfil</h1>
+                        <p class="descricao-pagina">Mantenha suas informações de contato e preferências atualizadas.</p>
+                    </div>
+                    <a class="botao botao-secundario" href="painel.html">Voltar ao painel</a>
+                </div>
+
+                <div class="layout-perfil">
+                    <aside class="painel-conteudo resumo-perfil">
+                        <div class="avatar-perfil" aria-hidden="true">NW</div>
+                        <h2 id="resumo-nome">Administrador</h2>
+                        <p id="resumo-email">Conta demonstrativa</p>
+                        <span class="etiqueta-status status-ativo">Conta ativa</span>
+                        <div class="divisor-perfil"></div>
+                        <dl class="dados-conta">
+                            <div><dt>Identificador</dt><dd>NW-ADM-001</dd></div>
+                            <div><dt>Tipo de acesso</dt><dd>Administrador</dd></div>
+                            <div><dt>Ambiente</dt><dd>Local / demonstração</dd></div>
+                        </dl>
+                    </aside>
+
+                    <section class="painel-conteudo formulario-perfil" aria-labelledby="titulo-dados-pessoais">
+                        <div class="cabecalho-painel cabecalho-formulario">
+                            <div>
+                                <h2 id="titulo-dados-pessoais">Informações do perfil</h2>
+                                <p>Os dados ficam salvos somente neste navegador.</p>
+                            </div>
+                        </div>
+
+                        <form id="form-perfil" class="formulario-padrao">
+                            <div class="grade-campos">
+                                <div class="campo">
+                                    <label for="perfil-id">Identificador</label>
+                                    <input type="text" id="perfil-id" value="NW-ADM-001" readonly>
+                                    <small class="ajuda-campo">Campo definido pelo sistema.</small>
+                                </div>
+                                <div class="campo">
+                                    <label for="perfil-acesso">Nível de acesso</label>
+                                    <input type="text" id="perfil-acesso" value="Administrador" disabled>
+                                    <small class="ajuda-campo">Gerenciado pelo sistema.</small>
+                                </div>
+                                <div class="campo">
+                                    <label for="perfil-nome">Nome completo</label>
+                                    <input type="text" id="perfil-nome" name="nome" placeholder="Seu nome completo" autocomplete="name" minlength="3" required>
+                                </div>
+                                <div class="campo">
+                                    <label for="perfil-email">E-mail</label>
+                                    <input type="email" id="perfil-email" name="email" placeholder="nome@empresa.com" autocomplete="email" required>
+                                </div>
+                                <div class="campo">
+                                    <label for="perfil-cpf">CPF</label>
+                                    <input type="text" id="perfil-cpf" name="cpf" placeholder="000.000.000-00" inputmode="numeric" maxlength="14" required>
+                                    <small class="ajuda-campo">Use um número fictício para os testes.</small>
+                                </div>
+                                <div class="campo">
+                                    <label for="perfil-nascimento">Data de nascimento</label>
+                                    <input type="date" id="perfil-nascimento" name="nascimento" required>
+                                </div>
+                                <div class="campo">
+                                    <label for="perfil-tipo">Tipo de usuário</label>
+                                    <select id="perfil-tipo" name="tipo" required>
+                                        <option value="">Selecione uma opção</option>
+                                        <option value="Administrador">Administrador</option>
+                                        <option value="Funcionário">Funcionário</option>
+                                        <option value="Cliente">Cliente</option>
+                                    </select>
+                                </div>
+                                <div class="campo">
+                                    <label for="perfil-estado">Estado</label>
+                                    <select id="perfil-estado" name="estado" required>
+                                        <option value="">Selecione seu estado</option>
+                                        <option value="SP">São Paulo</option>
+                                        <option value="PR">Paraná</option>
+                                        <option value="SC">Santa Catarina</option>
+                                        <option value="RS">Rio Grande do Sul</option>
+                                    </select>
+                                </div>
+                                <div class="campo">
+                                    <label for="perfil-telefone">Telefone</label>
+                                    <input type="tel" id="perfil-telefone" name="telefone" placeholder="(11) 99999-9999" autocomplete="tel" maxlength="15">
+                                </div>
+                                <div class="campo">
+                                    <label for="perfil-area">Área de atuação</label>
+                                    <select id="perfil-area" name="area" required>
+                                        <option value="">Selecione uma área</option>
+                                        <option value="Administração">Administração</option>
+                                        <option value="Atendimento">Atendimento</option>
+                                        <option value="Desenvolvimento">Desenvolvimento</option>
+                                        <option value="Design">Design</option>
+                                        <option value="Operações">Operações</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <fieldset class="grupo-opcoes">
+                                <legend>Modelo de trabalho</legend>
+                                <div class="opcoes-linha">
+                                    <label class="opcao-radio"><input type="radio" name="modelo" value="Presencial" required><span>Presencial</span></label>
+                                    <label class="opcao-radio"><input type="radio" name="modelo" value="Híbrido"><span>Híbrido</span></label>
+                                    <label class="opcao-radio"><input type="radio" name="modelo" value="Remoto"><span>Remoto</span></label>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="grupo-opcoes">
+                                <legend>Áreas de interesse</legend>
+                                <div class="opcoes-linha opcoes-interesses">
+                                    <label class="opcao-check"><input type="checkbox" name="interesses" value="Desenvolvimento web"><span>Desenvolvimento web</span></label>
+                                    <label class="opcao-check"><input type="checkbox" name="interesses" value="Design e interface"><span>Design e interface</span></label>
+                                    <label class="opcao-check"><input type="checkbox" name="interesses" value="Gestão de projetos"><span>Gestão de projetos</span></label>
+                                    <label class="opcao-check"><input type="checkbox" name="interesses" value="Dados e relatórios"><span>Dados e relatórios</span></label>
+                                </div>
+                            </fieldset>
+
+                            <div class="campo">
+                                <label for="perfil-bio">Sobre você</label>
+                                <textarea id="perfil-bio" name="bio" rows="4" minlength="15" placeholder="Conte brevemente sobre sua atuação e seus objetivos profissionais." required></textarea>
+                                <small class="ajuda-campo">Escreva pelo menos 15 caracteres.</small>
+                            </div>
+
+                            <p class="mensagem-formulario" id="mensagem-perfil" role="status" aria-live="polite"></p>
+                            <div class="acoes-formulario">
+                                <button type="reset" class="botao botao-secundario">Limpar campos</button>
+                                <button type="submit" class="botao botao-principal">Salvar alterações</button>
+                            </div>
+                        </form>
+                    </section>
+                </div>
+
+                <footer class="rodape-sistema"><span>NovaWeb · Situação de Aprendizagem 02</span><span>Projeto acadêmico · Dados fictícios</span></footer>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

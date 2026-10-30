@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Acesso ao sistema administrativo NovaWeb.">
+    <title>Entrar | NovaWeb</title>
+    <link rel="icon" href="assets/images/marca-novaweb.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/estilo.css">
+    <script src="js/dados.js" defer></script>
+    <script src="js/script.js" defer></script>
+</head>
+<body class="pagina-acesso" data-page="login">
+    <main class="acesso-layout">
+        <section class="acesso-apresentacao" aria-label="Apresentação do NovaWeb">
+            <a class="marca marca-clara" href="index.html" aria-label="NovaWeb - página inicial">
+                <img src="assets/images/marca-novaweb.svg" alt="" width="38" height="38">
+                <span>novaweb</span>
+            </a>
+
+            <div class="apresentacao-conteudo">
+                <p class="sobretitulo">GESTÃO INTERNA</p>
+                <h1>Informação organizada.<br>Rotina mais simples.</h1>
+                <p>Um espaço para acompanhar cadastros, consultar informações e manter os dados da equipe em ordem.</p>
+            </div>
+
+            <div class="apresentacao-rodape">
+                <span class="indicador-ponto" aria-hidden="true"></span>
+                Ambiente demonstrativo · SA02
+            </div>
+        </section>
+
+        <section class="acesso-formulario" aria-labelledby="titulo-login">
+            <div class="formulario-acesso-conteudo">
+                <div class="acesso-cabecalho-mobile">
+                    <a class="marca" href="index.html">
+                        <img src="assets/images/marca-novaweb.svg" alt="" width="34" height="34">
+                        <span>novaweb</span>
+                    </a>
+                </div>
+
+                <p class="sobretitulo">ACESSO AO SISTEMA</p>
+                <h2 id="titulo-login">Entre na sua conta</h2>
+                <p class="texto-introdutorio">Informe seus dados para abrir o painel administrativo.</p>
+
+                <form id="form-login" class="formulario-padrao">
+                    <div class="campo">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="nome@empresa.com" autocomplete="username" required autofocus>
+                    </div>
+
+                    <div class="campo">
+                        <label for="senha">Senha</label>
+                        <div class="campo-senha">
+                            <input type="password" id="senha" name="senha" placeholder="Digite sua senha" autocomplete="current-password" minlength="6" required>
+                            <button type="button" class="botao-texto" id="alternar-senha" aria-label="Mostrar senha" aria-pressed="false">Mostrar</button>
+                        </div>
+                        <small class="ajuda-campo">Use pelo menos 6 caracteres.</small>
+                    </div>
+
+                    <div class="linha-opcoes-login">
+                        <label class="opcao-check" for="lembrar-email">
+                            <input type="checkbox" id="lembrar-email" name="lembrar-email">
+                            <span>Manter meu e-mail neste dispositivo</span>
+                        </label>
+                        <button type="button" class="link-botao" id="recuperar-senha">Esqueceu a senha?</button>
+                    </div>
+
+                    <p class="mensagem-formulario" id="mensagem-login" role="status" aria-live="polite"></p>
+                    <button type="submit" class="botao botao-principal botao-largo">Entrar no sistema</button>
+                </form>
+
+                <div class="aviso-demo">
+                    <strong>Modo de demonstração</strong>
+                    <p>Não existe autenticação de servidor nesta versão. Use qualquer e-mail válido e uma senha com 6 caracteres ou mais.</p>
+                </div>
+
+                <footer class="rodape-acesso">
+                    <span>NovaWeb · Projeto acadêmico</span>
+                    <span>HTML · CSS · JavaScript</span>
+                </footer>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
